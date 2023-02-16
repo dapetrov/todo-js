@@ -8,7 +8,7 @@ const todo = {
             type="checkbox"
             class="list-todo__li__container__checkbox"
           /><label class="list-todo__li__container__label">${text}</label>
-          <button class="delete-todo">del</button>
+          <button class="delete-todo" onclick="deleteToDo(event)">del
         </div>
       </li>
     </ul>
@@ -28,4 +28,15 @@ const todo = {
 
 function AddNewToDo() {
   todo.add();
+}
+function deleteToDo(event) {
+  let target = event.target;
+  while (target != this) {
+    if (target.classList.contains("list-todo_wrapper")) {
+      target.remove();
+      return;
+    }
+    target = target.parentNode;
+  }
+  target.remove();
 }
