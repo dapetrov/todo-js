@@ -16,21 +16,27 @@
         <input
           class="input-container__input"
           placeholder="What needs to be done?"
+          onchange="AddNewToDo()"
         />
-        <div class="list-todo_wrapper">
-          <ul class="list-todo">
-            <li class="list-todo__li">
-              <div class="list-todo__li__container">
-                <input
-                  type="checkbox"
-                  class="list-todo__li__container__checkbox"
-                /><label class="list-todo__li__container__label">fdfdfdf</label>
-                <button class="delete-todo">del</button>
-              </div>
-            </li>
-          </ul>
+        <div class="todo-all">
+          <div class="list-todo_wrapper">
+            <ul class="list-todo">
+              <li class="list-todo__li">
+                <div class="list-todo__li__container">
+                  <input
+                    type="checkbox"
+                    class="list-todo__li__container__checkbox"
+                  /><label class="list-todo__li__container__label"
+                    >fdfdfdf</label
+                  >
+                  <button class="delete-todo">del</button>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
   </body>
+  <script src="./script.js"></script>
 </html>
