@@ -27,11 +27,7 @@ const todo = {
   },
   delete(event) {
     let target = event.target;
-    while (target != this) {
-      if (target.classList.contains("list-todo_wrapper")) {
-        target.remove();
-        return;
-      }
+    while (!target.classList.contains("list-todo_wrapper")) {
       target = target.parentNode;
     }
     target.remove();
