@@ -19,6 +19,7 @@ li {
   text-align: center;
   font-size: 100px;
   font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
 }
 .input-container__input {
   display: block;
@@ -58,6 +59,7 @@ li {
   height: 40px;
   width: 40px;
   margin: 15px 0 15px 10px;
+  cursor: pointer;
 }
 .all-checkbox {
   height: 0;
@@ -73,7 +75,9 @@ li {
   margin-top: 45px;
   margin-left: 630px;
   display: block;
-  background-color: #ead7d7;
+  background-size: 100%;
+  background-image: url(./src/arrow.png);
+  cursor: pointer;
 }
 .delete-todo {
   height: 40px;
@@ -83,6 +87,7 @@ li {
 .crossed-out {
   text-decoration: line-through;
   color: #a9aaa7;
+  user-select: none;
 }
 
 .close-icon {
@@ -113,4 +118,60 @@ li {
 
 .close-icon:after {
   transform: rotate(-45deg);
+}
+.display-none {
+  display: none;
+}
+
+/*Стили для кнопки удаления*/
+
+.button-block {
+  margin-left: 50%;
+  user-select: none;
+}
+.delete-all {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+.delete-all:hover {
+  background-color: #3e8e41;
+}
+.delete-all:active {
+  background-color: #3e8e41;
+  transform: translateY(1px);
+}
+
+/*Стили для кнопок Active/Selected*/
+
+.checkbox-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.checkbox-button:hover {
+  background-color: #3e8e41;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+.checkbox-input-active:checked + label {
+  background-color: #3e8e41;
+  transform: translateY(5px);
+}
+.checkbox-input-active {
+  display: none;
 }
