@@ -80,21 +80,30 @@ deleteButton.addEventListener("click", function () {
   });
 });
 
-// ТРЕБУЕТ ДОРАБОТКИ
-// const activeButton = document.querySelector("active-btn-input");
-// activeButton.addEventListener("click", function () {
-//   const checkboxes = document.querySelectorAll(
-//     ".list-todo__li__container__checkbox"
-//   );
-//   console.log("checked");
-//   checkboxes.forEach((checkbox) => {
-//     if (checkbox.checked) {
-//       while (!checkbox.classList.contains("list-todo_wrapper")) {
-//         checkbox = checkbox.parentNode;
-//       }
-//       checkbox.classList.add("display-none");
-//     } else {
-//       checkbox.classList.remove("display-none");
-//     }
-//   });
-// });
+const activeButton = document.querySelector("#checkbox-button-active");
+let isHidden = false;
+activeButton.addEventListener("click", function () {
+  const checkboxes = document.querySelectorAll(
+    ".list-todo__li__container__checkbox"
+  );
+  const inputElement = document.querySelector(".input-container__input");
+  checkboxes.forEach((checkbox) => {
+    let element = checkbox;
+    if (checkbox.checked) {
+      while (!element.classList.contains("list-todo_wrapper")) {
+        element = element.parentNode;
+      }
+      if (!isHidden) {
+        activeButton.classList.add("checkbox-input_active");
+        element.classList.add("display-none");
+        inputElement.setAttribute("disabled", "true");
+      } else {
+        inputElement.removeAttribute("disabled");
+        element.classList.remove("display-none");
+        activeButton.classList.remove("checkbox-input_active");
+      }
+    }
+  });
+  isHidden = !isHidden;
+  console.log(isHidden);
+});

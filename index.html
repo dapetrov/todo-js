@@ -11,8 +11,9 @@
     <header><h1 class="header-text">todos</h1></header>
     <main>
       <div class="input-container">
-        <input class="all-checkbox" id="all-checkboxes" type="checkbox" />
-        <label class="label-for-checkbox" for="all-checkbox"></label>
+        <label class="label-for-checkbox" for="all-checkbox">
+          <input class="all-checkbox" id="all-checkboxes" type="checkbox" />
+        </label>
         <input
           class="input-container__input"
           placeholder="What needs to be done?"
@@ -24,9 +25,13 @@
           <button class="delete-all" id="delete-all_1">Delete selected</button>
           <input
             type="checkbox"
-            id="active-btn-input"
+            id="active-btn-input_active"
             class="checkbox-input-active"
-          /><label for="active-btn-input" class="checkbox-button">
+          /><label
+            for="active-btn-input"
+            class="checkbox-button"
+            id="checkbox-button-active"
+          >
             Active</label
           >
           <input
