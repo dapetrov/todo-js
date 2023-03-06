@@ -17,21 +17,12 @@
       <input
         class="input-container__input"
         placeholder="What needs to be done?"
-        onchange="todo.add()"
+        id="main-input"
+        onchange="addTask()"
         maxlength="45"
       />
 
-      <ul class="todo-all">
-        <li class="list-todo__li__container">
-          <input
-            type="checkbox"
-            class="list-todo__li__container__checkbox"
-          /><label class="list-todo__li__container__label">text</label>
-          <a class="close-button" href="#">
-            <span class="close-icon"></span>
-          </a>
-        </li>
-      </ul>
+      <ul class="task-list" id="task-list"></ul>
 
       <div class="button-block">
         <button class="delete-all" id="delete-all_1">Delete selected</button>

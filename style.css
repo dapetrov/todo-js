@@ -33,13 +33,13 @@ li {
   box-shadow: 0px 0px 2px 0px #a9aaa7;
   outline: none;
 }
-.list-todo__li__container__label {
+.task-element__label {
   overflow: hidden;
 }
 .input-container__input::placeholder {
   color: #e6e6e6;
 }
-.list-todo__li__container {
+.task-element {
   display: flex;
   margin: 0px auto 0 auto;
   font-size: 40px;
@@ -48,14 +48,14 @@ li {
   border: none;
   box-shadow: 0px 0px 15px 0px #a9aaa7;
 }
-.list-todo__li__container__label {
+.task-element__label {
   display: block;
   padding: 15px 15px 15px 10px;
   font-size: 40px;
   width: 560px;
   font-family: Arial, Helvetica, sans-serif;
 }
-.list-todo__li__container__checkbox {
+.task-element__checkbox {
   height: 40px;
   width: 40px;
   margin: 15px 0 15px 10px;
