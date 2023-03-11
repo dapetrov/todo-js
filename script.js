@@ -83,3 +83,7 @@ function renderTask(task) {
 
   task_list.insertAdjacentHTML("beforeend", task_HTML);
 }
+
+// function allDone(){
+
+// }
