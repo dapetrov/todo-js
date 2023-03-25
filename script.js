@@ -1,14 +1,27 @@
 class TaskAPI {
   addTask(task) {
-    setTimeout(async () => {
-      const json = await this.getTasks();
-      const newJson = json ? [...json] : [];
-      localStorage.setItem("oldTasks", JSON.stringify([...newJson, task]));
-    }, 1000);
+    this.timeoutWrapper(() => this.addTaskImpl(task));
   }
+
   getTasks() {
+    return this.timeoutWrapper(this.getTasksImpl);
+  }
+
+  async addTaskImpl(task) {
+    const json = await this.getTasks();
+    const newJson = json ? [...json] : [];
+    localStorage.setItem("oldTasks", JSON.stringify([...newJson, task]));
+  }
+
+  getTasksImpl() {
+    return JSON.parse(localStorage.getItem("oldTasks"));
+  }
+
+  timeoutWrapper(callback) {
     return new Promise((resolve) => {
-      resolve(JSON.parse(localStorage.getItem("oldTasks")));
+      setTimeout(() => {
+        resolve(callback());
+      }, 500);
     });
   }
 }
