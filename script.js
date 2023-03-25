@@ -1,3 +1,21 @@
+class TaskAPI {
+  addTask(task) {
+    setTimeout(async () => {
+      const json = await this.getTasks();
+      const newJson = json ? [...json] : [];
+      localStorage.setItem("oldTasks", JSON.stringify([...newJson, task]));
+    }, 1000);
+  }
+  getTasks() {
+    return new Promise((resolve) => {
+      resolve(JSON.parse(localStorage.getItem("oldTasks")));
+    });
+  }
+}
+const apiInstance = new TaskAPI();
+
+// ======================================================
+
 const main_input = document.querySelector("#main-input");
 const task_list = document.querySelector("#task-list");
 task_list.addEventListener("click", doneTask);
@@ -24,6 +42,8 @@ function addTask() {
 
   main_input.value = "";
   main_input.focus();
+
+  apiInstance.addTask(newTask);
 }
 
 function deleteTask(event) {
